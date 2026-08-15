@@ -26,6 +26,9 @@ roles in Boston or remote.
 <img src="./assets/stats.svg" width="100%"
      alt="Vedant Mane GitHub statistics: 55 repositories, contributions over the last twelve months, three or more years in production data engineering, most recent project shipped today.">
 
+<img src="./assets/activity.svg" width="100%"
+     alt="GitHub activity charts for Vedant Mane: contributions by month over the last twelve months, and language mix across repositories pushed since 2024, with Jupyter notebooks counted as Python.">
+
 ---
 
 ## What I work on
@@ -59,45 +62,4 @@ through FastAPI and Streamlit.
 
 ---
 
-## How I build data pipelines
-
-```mermaid
-flowchart LR
-    A[Source]:::src --> B[Land raw]:::proc
-    B --> C[Validate<br/>and quarantine]:::proc
-    C --> D[(Dimensional<br/>model)]:::store
-    D --> E[Serve]:::serve
-    D --> F[Agents<br/>and RAG]:::serve
-    C -. rejected rows kept,<br/>never dropped .-> G[(Quarantine)]:::store
-
-    %% Stroke only, no fill or text colour. GitHub themes Mermaid from
-    %% prefers-color-scheme, and hardcoding a dark fill would break that on
-    %% light mode. The accent strokes read on both.
-    classDef src fill:transparent,stroke:#8ba4ff,stroke-width:1.5px
-    classDef proc fill:transparent,stroke:#8b949e,stroke-width:1.5px
-    classDef store fill:transparent,stroke:#3355ff,stroke-width:1.5px
-    classDef serve fill:transparent,stroke:#3fb950,stroke-width:1.5px
-```
-
-The branch to quarantine is the part that matters. A row that fails validation gets written somewhere
-countable rather than silently dropped, which is the difference between a data pipeline you can trust
-and one whose totals merely look plausible.
-
----
-
-
-## Contact
-
-<img src="./assets/contact.svg" width="100%"
-     alt="Contact Vedant Mane, Data Engineer and AI Developer. LinkedIn in/vedant-mane. Email vedant12mane@gmail.com. Portfolio vedantmane.vercel.app. Boston, Massachusetts. Available to work, open to data and AI roles.">
-
-<!-- The card above is an image, so links inside it cannot be clicked. These are
-     the real ones. -->
-**[LinkedIn: in/vedant-mane](https://www.linkedin.com/in/vedant-mane/)** &nbsp;·&nbsp;
-**[vedant12mane@gmail.com](mailto:vedant12mane@gmail.com)** &nbsp;·&nbsp;
-**[vedantmane.vercel.app](https://vedantmane.vercel.app)**
-
-Based in Boston, Massachusetts. Open to Data Engineer, Analytics Engineer, Machine Learning Engineer
-and AI Engineer roles.
-
-<sub>Pinned repositories below are a slice of the work. The <a href="https://vedantmane.vercel.app">portfolio</a> has the rest, each with an architecture diagram and the reasoning behind the build.</sub>
+<sub>Pinned repositories below are a slice of the work. The <a href="https://vedantmane.vercel.app">portfolio</a> has the rest, each with an architecture diagram and the reasoning behind the build. Charts rebuild daily from the GitHub API.</sub>

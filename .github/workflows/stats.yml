@@ -30,22 +30,30 @@ jobs:
         with:
           node-version: 22
 
-      - name: Regenerate stats.svg
+      - name: Regenerate the live cards
         env:
-          # Unlocks the GraphQL contribution count, which is unavailable
-          # without a token. Read-only use of the automatic token; no secret
-          # needs to be configured.
+          # Unlocks the GraphQL contribution data, which is unavailable without
+          # a token. Read-only use of the automatic token; no secret needs
+          # configuring. With it, the activity chart shows real contributions
+          # rather than falling back to repositories pushed.
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: node scripts/build-stats.mjs
+        run: |
+          node scripts/build-stats.mjs
+          node scripts/build-activity.mjs
+
+      # stack.svg is deliberately not regenerated here. It only changes when the
+      # technology list is edited by hand, and it needs simple-icons installed,
+      # so rebuilding it on a schedule would add an npm install to every run for
+      # a file that never changes on its own.
 
       - name: Commit if anything changed
         run: |
-          if git diff --quiet -- assets/stats.svg; then
-            echo "No change to stats.svg, nothing to commit."
+          if git diff --quiet -- assets/; then
+            echo "Cards unchanged, nothing to commit."
             exit 0
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add assets/stats.svg
-          git commit -m "Refresh profile stats [skip ci]"
+          git add assets/
+          git commit -m "Refresh profile cards [skip ci]"
           git push

@@ -1,0 +1,14 @@
+{
+  "name": "vedantmane12-profile",
+  "private": true,
+  "type": "module",
+  "description": "Generators for the GitHub profile README cards.",
+  "scripts": {
+    "stats": "node scripts/build-stats.mjs",
+    "activity": "node scripts/build-activity.mjs",
+    "stack": "node scripts/build-stack.mjs"
+  },
+  "devDependencies": {
+    "simple-icons": "^16.28.0"
+  }
+}

@@ -20,7 +20,9 @@
 import { writeFileSync } from "node:fs";
 import { createRequire } from "node:module";
 
-const require = createRequire("file:///Users/vedant/Desktop/Projects/portfolio-website/");
+// Resolved from this repo's own node_modules. An earlier version pointed at an
+// absolute path on one machine, which meant the script only ran there.
+const require = createRequire(import.meta.url);
 const si = require("simple-icons");
 
 /** simple-icons exports siPascalcase of the lowercase alphanumeric slug. */
