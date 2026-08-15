@@ -45,7 +45,10 @@ async function repos(user) {
 async function contributionsByMonth(user) {
   if (!token) return null;
   const to = new Date();
-  const from = new Date(Date.UTC(to.getUTCFullYear() - 1, to.getUTCMonth(), 1));
+  // Exactly 365 days, not "the first of this month a year ago". That version
+  // spanned up to 379 days, and contributionsCollection rejects any range over
+  // a year, so the query errored and the card silently fell back every run.
+  const from = new Date(to.getTime() - 364 * 86400000);
   const res = await fetch("https://api.github.com/graphql", {
     method: "POST",
     headers: { ...headers, "Content-Type": "application/json" },
@@ -56,10 +59,17 @@ async function contributionsByMonth(user) {
       variables: { login: user, from: from.toISOString(), to: to.toISOString() },
     }),
   });
-  if (!res.ok) return null;
+  if (!res.ok) {
+    console.warn(`[activity] contributions query HTTP ${res.status}`);
+    return null;
+  }
   const json = await res.json();
+  if (json.errors) console.warn("[activity] GraphQL errors:", JSON.stringify(json.errors));
   const weeks = json?.data?.user?.contributionsCollection?.contributionCalendar?.weeks;
-  if (!weeks) return null;
+  if (!weeks) {
+    console.warn("[activity] no contribution calendar returned, falling back");
+    return null;
+  }
   const buckets = new Map();
   for (const w of weeks)
     for (const d of w.contributionDays)
