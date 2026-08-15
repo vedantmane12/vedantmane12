@@ -85,22 +85,19 @@ and one whose totals merely look plausible.
 
 ---
 
-## How I work
-
-- **The number has to be checkable.** If I quote a figure, it traces to a committed file rather than an estimate.
-- **Failure modes over happy paths.** Schema drift, unmatched joins and re-runnable loads are what decide whether a pipeline survives contact with real data.
-- **Read the code, not the README.** Documentation drifts from behaviour faster than anyone expects, including my own.
-- **Cost is a design constraint.** Warehouse spend and GPU memory belong in the design, not in the invoice you read later.
-
----
 
 ## Contact
 
-Boston, Massachusetts. Open to Data Engineer, Analytics Engineer, Machine Learning Engineer and
-AI Engineer roles.
+<img src="./assets/contact.svg" width="100%"
+     alt="Contact Vedant Mane, Data Engineer and AI Developer. LinkedIn in/vedant-mane. Email vedant12mane@gmail.com. Portfolio vedantmane.vercel.app. Boston, Massachusetts. Available to work, open to data and AI roles.">
 
-[![Portfolio](https://img.shields.io/badge/Portfolio-vedantmane.vercel.app-8ba4ff?style=for-the-badge)](https://vedantmane.vercel.app)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-vedant--mane-0A66C2?style=for-the-badge)](https://www.linkedin.com/in/vedant-mane/)
-[![Email](https://img.shields.io/badge/Email-vedant12mane%40gmail.com-1a1b20?style=for-the-badge&logo=gmail&logoColor=white)](mailto:vedant12mane@gmail.com)
+<!-- The card above is an image, so links inside it cannot be clicked. These are
+     the real ones. -->
+**[LinkedIn: in/vedant-mane](https://www.linkedin.com/in/vedant-mane/)** &nbsp;·&nbsp;
+**[vedant12mane@gmail.com](mailto:vedant12mane@gmail.com)** &nbsp;·&nbsp;
+**[vedantmane.vercel.app](https://vedantmane.vercel.app)**
+
+Based in Boston, Massachusetts. Open to Data Engineer, Analytics Engineer, Machine Learning Engineer
+and AI Engineer roles.
 
 <sub>Pinned repositories below are a slice of the work. The <a href="https://vedantmane.vercel.app">portfolio</a> has the rest, each with an architecture diagram and the reasoning behind the build.</sub>
