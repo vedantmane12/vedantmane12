@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 220" width="880" height="220" role="img" aria-label="Vedant Mane, Data Engineer and AI Developer, Boston MA, available to work">
+  <title>Vedant Mane — Data Engineer &amp; AI Developer</title>
+
+  <defs>
+    <!-- Accent glow behind the name, echoing the portfolio hero. -->
+    <radialGradient id="glow" cx="12%" cy="0%" r="70%">
+      <stop offset="0%" stop-color="#8ba4ff" stop-opacity="0.20"/>
+      <stop offset="60%" stop-color="#8ba4ff" stop-opacity="0"/>
+    </radialGradient>
+    <!-- Fades the grid rules out toward the bottom, as on the site. -->
+    <linearGradient id="ruleFade" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#212229" stop-opacity="0.9"/>
+      <stop offset="70%" stop-color="#212229" stop-opacity="0"/>
+    </linearGradient>
+    <clipPath id="card"><rect width="880" height="220" rx="14"/></clipPath>
+  </defs>
+
+  <g clip-path="url(#card)">
+    <rect width="880" height="220" fill="#08090b"/>
+    <rect width="880" height="220" fill="url(#glow)"/>
+
+    <!-- Vertical rules, deliberately faint: the same restraint as the site hero. -->
+    <g stroke="url(#ruleFade)" stroke-width="1">
+      <line x1="176" y1="0" x2="176" y2="220"/>
+      <line x1="352" y1="0" x2="352" y2="220"/>
+      <line x1="528" y1="0" x2="528" y2="220"/>
+      <line x1="704" y1="0" x2="704" y2="220"/>
+    </g>
+
+    <!-- Identity -->
+    <text x="48" y="86" font-family="Helvetica Neue, Helvetica, Arial, sans-serif"
+          font-size="44" font-weight="700" letter-spacing="-1.4" fill="#f1f1f2">Vedant Mane</text>
+
+    <text x="48" y="120" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace"
+          font-size="14.5" letter-spacing="2.4" fill="#8ba4ff">DATA ENGINEER &amp; AI DEVELOPER</text>
+
+    <!-- Availability. The dot breathes rather than blinks: a blink reads as an error state. -->
+    <g transform="translate(48,150)">
+      <circle cx="5" cy="0" r="4.5" fill="#4ade80">
+        <animate attributeName="opacity" values="1;0.35;1" dur="2.6s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="5" cy="0" r="4.5" fill="none" stroke="#4ade80" stroke-width="1">
+        <animate attributeName="r" values="4.5;11" dur="2.6s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0.5;0" dur="2.6s" repeatCount="indefinite"/>
+      </circle>
+      <text x="20" y="4" font-family="Helvetica Neue, Helvetica, Arial, sans-serif"
+            font-size="13.5" fill="#9a9aa4">Available to work &#183; Boston, MA</text>
+    </g>
+
+    <text x="48" y="188" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace"
+          font-size="11.5" letter-spacing="1.4" fill="#5a5a64">16 SHIPPED PROJECTS &#183; EVERY FIGURE MEASURED</text>
+
+    <!-- Pipeline motif: four stages with data flowing through, left to right, forever.
+         This is the site's "Pipelines that keep up" line rendered as a picture. -->
+    <g transform="translate(566,104)">
+      <line x1="0" y1="0" x2="252" y2="0" stroke="#212229" stroke-width="1.5"/>
+
+      <g fill="#08090b" stroke="#2f3140" stroke-width="1.5">
+        <rect x="-8" y="-8" width="16" height="16" rx="4"/>
+        <rect x="76" y="-8" width="16" height="16" rx="4"/>
+        <rect x="160" y="-8" width="16" height="16" rx="4"/>
+        <rect x="244" y="-8" width="16" height="16" rx="4"/>
+      </g>
+
+      <!-- Three packets, staggered, fading in and out at the ends so the loop has no seam. -->
+      <g fill="#8ba4ff">
+        <circle cx="0" cy="0" r="3.5">
+          <animate attributeName="cx" values="0;252" dur="3.2s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.12;0.88;1" dur="3.2s" repeatCount="indefinite"/>
+        </circle>
+        <circle cx="84" cy="0" r="3.5">
+          <animate attributeName="cx" values="0;252" dur="3.2s" begin="1.05s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.12;0.88;1" dur="3.2s" begin="1.05s" repeatCount="indefinite"/>
+        </circle>
+        <circle cx="168" cy="0" r="3.5">
+          <animate attributeName="cx" values="0;252" dur="3.2s" begin="2.1s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.12;0.88;1" dur="3.2s" begin="2.1s" repeatCount="indefinite"/>
+        </circle>
+      </g>
+
+      <g font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="9"
+         letter-spacing="1.1" fill="#5a5a64" text-anchor="middle">
+        <text x="0" y="26">INGEST</text>
+        <text x="84" y="26">MODEL</text>
+        <text x="168" y="26">SERVE</text>
+        <text x="252" y="26">ACT</text>
+      </g>
+    </g>
+
+    <rect width="880" height="220" rx="14" fill="none" stroke="#212229" stroke-width="1"/>
+  </g>
+</svg>
