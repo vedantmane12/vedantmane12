@@ -10,7 +10,7 @@ on:
   push:
     # So a change to the generator is reflected without waiting for the cron.
     paths:
-      - "scripts/build-stats.mjs"
+      - "scripts/**"
       - ".github/workflows/stats.yml"
 
 permissions:
