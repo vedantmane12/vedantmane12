@@ -17,7 +17,7 @@ dimensional data warehouses on **Databricks** and **Snowflake**, and agentic AI 
 **MS in Information Systems at Northeastern University** in Boston.
 
 Open to **Data Engineer**, **Analytics Engineer**, **Machine Learning Engineer** and **AI Engineer**
-roles in Boston or remote.
+roles in the United States or remote.
 
 ---
 
